@@ -16,6 +16,10 @@ class FileDescription(BaseModel):
     en: str
 
     @classmethod
+    def empty(cls):
+        return cls(ru="", en="")
+
+    @classmethod
     def from_filename(cls, filename: str):
         description = filename.rsplit(".", maxsplit=1)[0]
         return cls(ru=description, en=description)
