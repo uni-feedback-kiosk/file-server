@@ -37,7 +37,7 @@ async def create_new_file(file: UploadFile, files: Files = Depends(get_file_fact
         file.filename,
         file.file,
         file.content_type,
-        description=FileDescription.from_filename(file.filename),
+        description=FileDescription.empty(),
     )
 
 
